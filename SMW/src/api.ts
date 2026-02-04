@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // src/api.tsx
 
-const BASE_URL = import.meta.env.PROD 
+export const BASE_URL = import.meta.env.PROD 
   ? '/api'  // This will use Netlify's proxy
   : 'https://api.dgin.in/api';
 console.log('🔍 API BASE_URL:', BASE_URL, '| Production mode:', import.meta.env.PROD);

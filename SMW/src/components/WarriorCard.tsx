@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MoreHorizontal } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
-const BASE_URL = import.meta.env.PROD 
-  ? '/api'  // This will use Netlify's proxy
-  : 'https://api.dgin.in/api';
+import {BASE_URL} from '../api';
 
 interface WarriorCardProps {
     warrior: {

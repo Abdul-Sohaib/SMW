@@ -3,10 +3,7 @@ import { Calendar, ExternalLink, ChevronLeft, ChevronRight, CheckCircle, ZoomIn,
 
 import { useAppContext } from '../context/AppContext';
 import { deleteSubmission, reviewSubmission } from '../api';
-
-const BASE_URL = import.meta.env.PROD 
-  ? '/api'
-  : 'https://api.dgin.in/api';
+import {BASE_URL} from '../api';
 
 interface Image {
     id: number;

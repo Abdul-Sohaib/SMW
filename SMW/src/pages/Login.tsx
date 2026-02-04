@@ -1,10 +1,7 @@
 // src/pages/Login.tsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? '/api'  // This will use Netlify's proxy
-  : 'https://api.dgin.in/api';
+import {BASE_URL} from '../api';
 
 interface LoginProps {
     onLogin: (role: string) => void; // Modified onLogin prop
@@ -38,7 +35,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         setLoginError(null);
 
         try {
-           const response = await fetch(`${API_BASE_URL}/auth/login`, {
+           const response = await fetch(`${BASE_URL}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
