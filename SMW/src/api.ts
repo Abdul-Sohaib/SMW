@@ -240,7 +240,15 @@ export const reviewSubmission = async (submissionId: number, newStatus: string) 
     method: 'PUT',
     body: JSON.stringify({ status: newStatus }),
   });
-
+//new bulk approve button 
+export const bulkReviewSubmissions = async (
+  submissions: Array<{ id: number; status: string }>
+): Promise<ApiResponse<any>> => {
+  return fetchWithAuth(`${BASE_URL}/smw/bulk-review-submission`, {
+    method: 'PUT',
+    body: JSON.stringify({ data: submissions }),
+  });
+};
 export const deleteTask = async (taskId: number) =>
   fetchWithAuth(`${BASE_URL}/smw/delete-task/${taskId}`, {
     method: 'DELETE',
