@@ -209,7 +209,7 @@ const TaskSubmissions: React.FC<TaskSubmissionsProps> = ({
     // FILTER LOGIC: Updated isAllSelected to check against filtered submissions
     const isAllSelected = filteredSubmissions.length > 0 && selectedSubmissions.size === filteredSubmissions.length;
 
-    const handleApprove = async (submissionId: number) => {
+       const handleApprove = async (submissionId: number) => {
         try {
             await reviewSubmission(submissionId, 'reviewed');
             setSubmissions(prevSubmissions =>
